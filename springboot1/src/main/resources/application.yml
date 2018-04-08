@@ -1,0 +1,12 @@
+# : 后必需有一个空格
+server:
+  port: 8086
+  servlet:
+    context-path: /
+spring:
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n/messages
+
+
