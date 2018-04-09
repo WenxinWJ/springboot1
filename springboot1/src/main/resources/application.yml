@@ -8,5 +8,16 @@ spring:
     cache: false
   messages:
     basename: i18n/messages
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/employee?useSSL=false&serverTimezone=Asia/Shanghai
+    username: king
+    password: lian
+# 指定包下的别名
+mybatis:
+  type-aliases-package: com.springboot1.domain
+  mapper-locations: mapper/CarMapper.xml
+
+
 
 
