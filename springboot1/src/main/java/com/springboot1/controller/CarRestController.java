@@ -98,7 +98,7 @@ public class CarRestController {
         return new ResponseEntity<>(car, HttpStatus.OK);
     }
 
-    //
+    // 模糊查询
     @RequestMapping(value = "/car", method = RequestMethod.GET)
     public ResponseEntity<?> findCar(@RequestParam(value = "name", required = false) String name,
                                      @DateTimeFormat(pattern = "yyyy-MM-dd") @RequestParam(value = "beginDate", required = false) Date beginDate,

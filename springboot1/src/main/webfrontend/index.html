@@ -10,10 +10,10 @@
 <body>
 <div class="container">
     <h1>前端 Car</h1>
-    <div class="align-content-center">
-        <input id="btnname" placeholder="车名" class="control" type="text">&nbsp;&nbsp;
-        <input id="beginDate" class="control" type="date">&nbsp;&nbsp;
-        <input id="endDate" class="control" type="date">&nbsp;&nbsp;
+    <div class="row" >
+        <input id="btnname" placeholder="车名" class="form-control" style="width: 200px" type="text">&nbsp;&nbsp;
+        <input id="beginDate" class="form-control" style="width: 200px" type="date">&nbsp;&nbsp;
+        <input id="endDate" class="form-control" style="width: 200px" type="date">&nbsp;&nbsp;
         <button type="button" class="btn btn-success" onclick="btn()">查询</button>
     </div>
     <br>
@@ -136,7 +136,7 @@
         })
     });
 
-    // 注册新增按钮事件
+    // 新增提交
     $("#btnAdd").click(() => {
         // 验证表单参数
         let data = {
@@ -179,6 +179,7 @@
         )
     }
 
+    // 删除
     function removeCar(id, name) {
         console.log("删除", id, name);
         if (confirm("是否确认删除 " + name + " ?")) {

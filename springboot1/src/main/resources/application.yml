@@ -16,7 +16,7 @@ spring:
 # 指定包下的别名
 mybatis:
   type-aliases-package: com.springboot1.domain
-  mapper-locations: mapper/CarMapper.xml
+  mapper-locations: mapper/CarMapper.xml  # 多文件时 用 *.xml 替换CarMapper.xml
 
 
 

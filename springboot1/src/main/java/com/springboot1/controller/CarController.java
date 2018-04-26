@@ -39,4 +39,59 @@ public class CarController {
 
         return mv;
     }
+
+    //------------------thymeleaf---------------------------
+    @PostMapping("add")
+    public ModelAndView add(@ModelAttribute("car") Car car) {
+        System.out.println(car);
+        carService.addCar(car);
+
+
+        List<Car> carList = carService.find();
+        ModelAndView mav = new ModelAndView("Tcarlist");
+        mav.addObject("list", carList);
+        return mav;
+    }
+
+    @GetMapping("remove")
+    public ModelAndView remove(Integer id) {
+        carService.remove(id);  //if 404
+
+        List<Car> carList = carService.find();
+        ModelAndView mav = new ModelAndView("Tcarlist");
+        mav.addObject("list", carList);
+        return mav;
+    }
+
+    @PostMapping("modify")
+    public ModelAndView modify(Car car) {
+        System.out.println(car.toString());
+        System.out.println(carService.modify(car));
+
+        List<Car> carList = carService.find();
+        ModelAndView mav = new ModelAndView("Tcarlist");
+        mav.addObject("list", carList);
+        return mav;
+    }
+
+    @GetMapping("getid")
+    public ModelAndView findId(Integer id) {
+        Car car = carService.findId(id);
+        ModelAndView mav = new ModelAndView("caredit");
+        mav.addObject("car", car);
+        return mav;
+    }
+
+    @GetMapping("list")
+    public ModelAndView findcar() {
+        List<Car> carList = carService.find();
+        ModelAndView mav = new ModelAndView("Tcarlist");
+        mav.addObject("list", carList);
+        return mav;
+    }
+
+    @GetMapping("toedit")
+    public ModelAndView to() {
+        return new ModelAndView("caradd");
+    }
 }
